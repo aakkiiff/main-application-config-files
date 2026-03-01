@@ -14,13 +14,12 @@ pipeline {
 
             }
         }
-    
 
-    
         stage('push to github') {
             steps {
                 sh 'git config --global user.email jackakif@gmail.com'
                 sh 'git config --global user.name aakkiiff'
+
                 sh 'git checkout main'
                 sh 'git add ./k8s/deployment.yaml'
                 sh "git commit -m'updated image tag to ${IMAGE_TAG}'" 
@@ -28,7 +27,6 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'passwd', usernameVariable: 'username')]) {
             
                 sh 'git push https://$username:$passwd@github.com/aakkiiff/main-application-config-files.git main'
-
                 }
             }
         }
