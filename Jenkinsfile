@@ -16,7 +16,7 @@ pipeline {
         }
     }
 
-    stages {
+    
         stage('push to github') {
             steps {
                 sh 'git config --global user.email akif22inbox@gmail.com'
@@ -32,4 +32,3 @@ pipeline {
             }
         }
     }
-}
