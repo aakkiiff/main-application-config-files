@@ -14,7 +14,7 @@ pipeline {
 
             }
         }
-    }
+    
 
     
         stage('push to github') {
