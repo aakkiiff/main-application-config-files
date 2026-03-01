@@ -19,7 +19,7 @@ pipeline {
     
         stage('push to github') {
             steps {
-                sh 'git config --global user.email akif22inbox@gmail.com'
+                sh 'git config --global user.email jackakif@gmail.com'
                 sh 'git config --global user.name aakkiiff'
 
                 sh 'git add ./k8s/deployment.yaml'
