@@ -26,6 +26,7 @@ pipeline {
                 sh "git commit -m'updated image tag to ${IMAGE_TAG}'" 
 
                 withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'passwd', usernameVariable: 'username')]) {
+            
                 sh 'git push https://$username:$passwd@github.com/aakkiiff/main-application-config-files.git main'
 
                 }
