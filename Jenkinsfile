@@ -4,8 +4,24 @@ pipeline {
     parameters {
         string(name: 'IMAGE_TAG', description: 'ENTER THE IMAGE TAG!')
     }
+    
 
     stages {
+
+        stage('CLEANUP WORKSPACE'){
+            steps{
+                script{
+                    cleanWs()
+                }
+            }
+        }
+
+        stage("CHECKOUT GIT REPO"){
+            steps{
+                git branch: 'main', url: "https://github.com/aakkiiff/main-application-config-files.git"
+            }
+        }
+
         stage('update image tag') {
             steps {
                 sh 'cat ./k8s/deployment.yaml'
