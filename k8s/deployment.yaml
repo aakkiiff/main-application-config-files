@@ -16,5 +16,5 @@ spec:
         app: project
     spec:
       containers:
-      - image: aakkiiff/jenkinstest:5
+      - image: aakkiiff/jenkinstest:6
         name: project
